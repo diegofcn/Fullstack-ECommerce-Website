@@ -1,48 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useEffect } from 'react'
 import Card from '../Card/Card'
 import './FeaturedProducts.scss'
+import axios from 'axios'
 
 const FeaturedProducts = ({type}) => {
 
-    const data = [
-        {
-            id: 1,
-            img: "https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            img2: "https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            title: "Long Sleeve",
-            isNew: true,
-            oldPrice: 19,
-            price: 12
+    const [data, setData] = useState([])
 
-        },
-        {
-            id: 2, 
-            img: "https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            title: "Coat",
-            isNew: true,
-            oldPrice: 19,
-            price: 12
-            
-        },
-        {
-            id: 3,
-            img: "https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            title: "Jeans",
-            isNew: false,
-            oldPrice: 20,
-            price: 13
-            
-        },
-        {
-            id: 4,
-            img: "https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            title: "Shirt",
-            isNew: false,
-            oldPrice: 9,
-            price: 5
-            
+    useEffect(() => {
+        const fetchData = async () => {
+            try{
+                const res = await axios.get(process.env.REACT_APP_API_URL + "/products?populate=*", {
+                    headers:{Authorization:"bearer " + process.env.REACT_APP_API_TOKEN,}
+                })
+                setData(res.data.data)
+            } catch(err) {
+                console.log(err)
+            }
         }
-    ]
+        fetchData();
+    }, [])
+
+    console.log(data)
 
   return (
     <div className='featuredProducts'>
