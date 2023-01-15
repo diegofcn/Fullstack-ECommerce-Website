@@ -66,6 +66,18 @@
         "featured",
         "trending"
       ]
+    },
+    "Features1": {
+      "type": "string"
+    },
+    "Features2": {
+      "type": "string"
+    },
+    "Features3": {
+      "type": "string"
+    },
+    "Features4": {
+      "type": "string"
     }
   }
 }
