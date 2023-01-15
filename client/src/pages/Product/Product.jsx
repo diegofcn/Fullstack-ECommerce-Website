@@ -32,12 +32,9 @@ const Product = () => {
         </div>
       </div>
       <div className="right">
-        <h1>Title</h1>
-        <span className='price'>$199</span>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          Modi autem, veniam quasi dolores temporibus corrupti tempore dolorum 
-          numquam reiciendis eaque velit necessitatibus, officia error beatae ad 
-          magnam voluptatem animi sint.</p>
+        <h1>{data?.attributes?.title}</h1>
+        <span className='price'>${data?.attributes?.price}</span>
+        <p>{data?.attributes?.desc}</p>
           <div className="quantity">
             <button onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}>-</button>
             {quantity}
