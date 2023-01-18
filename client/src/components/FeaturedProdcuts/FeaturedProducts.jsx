@@ -13,9 +13,7 @@ const FeaturedProducts = ({type}) => {
         <div className="top">
             <h1>{type} products</h1>
             <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-                Fugiat, quaerat, possimus incidunt at maiores magnam illo facilis porro, 
-                ex commodi vero voluptatem ipsam! Commodi laborum fugit consectetur unde nisi aut!
+            Tudo começou como qualquer grupo de Skaters. Andar de skate juntos pelas ruas de Lisboa desde 2006, filmar videos de skate, ir a campeonatos e ir em Tour na nossa carrinha era tudo o que fazíamos juntos e começamos assim a ser conhecidos em Portugal.
             </p>
         </div>
         <div className="bottom">
